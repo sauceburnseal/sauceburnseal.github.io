@@ -8,7 +8,7 @@
 
 [常見問題 (faq)](faq.md)
 
-[讚助 (Donate)](donate.md)
+[贊助 (Donate)](donate.md)
 
 [gimmick:theme (inverse: false)](yeti)
 
