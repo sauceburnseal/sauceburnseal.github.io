@@ -1,6 +1,8 @@
 # 醬燒海豹服
 
-[關於 (About)](index.md)
+[最新消息 (News)](index.md)
+
+[關於 (About)](about.md)
 
 [加入 (Join)](join.md)
 
