@@ -6,5 +6,7 @@
 
 [點此(google表單)(目前已關閉)](https://docs.google.com/forms/d/e/1FAIpQLSckJFNTx3hw9qQC1FuxM9dkVvExda9fR18dowrv2EQVHxLJZA/viewform)
 
+### 現階段加入後能獲得:
 
+![機庫圖](GOnlineScreenShot_20190527_165042.jpg)
 
