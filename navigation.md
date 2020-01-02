@@ -8,6 +8,8 @@
 
 [下載 (Download)](download.md)
 
+[轉蛋池資訊 (gacha)](gachapool.md)
+
 [常見問題 (faq)](faq.md)
 
 [贊助 (Donate)](donate.md)
