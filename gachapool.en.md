@@ -1,11 +1,26 @@
+<select class="btn lang" onchange="setLang(this)" style="display: block; position: absolute; z-index: 50;right:0;">
+	<option value="">auto</option>
+	<option value="zh">zh</option>
+	<option value="en">en</option>
+</select>
+
 <script type="text/javascript">
-var userLang = navigator.language || navigator.userLanguage;
-var isZh = !!userLang.match('zh');
-var pageEn = !!window.location.hash.match('.en.md$');
-var page = window.location.hash.match('(#!.*)\.md$')[1];
-if(pageEn) page = page.match('(.*)\.en$')[1];
-if(!isZh && !pageEn) window.location.hash = page + '.en.md';
-if(isZh && pageEn) window.location.hash =  page + '.md';
+function goLang(){
+	var userLang = localStorage.getItem('lang') || navigator.language || navigator.userLanguage;
+	var isZh = !!userLang.match('zh');
+	var pageEn = !!window.location.hash.match('.en.md$');
+	var page = window.location.hash.match('(#!.*)\.md$')[1];
+	if(pageEn) page = page.match('(.*)\.en$')[1];
+	if(!isZh && !pageEn) window.location.hash = page + '.en.md';
+	if(isZh && pageEn) window.location.hash =  page + '.md';
+	document.querySelector('select.lang').value = (localStorage.getItem('lang') == '')? '' : (isZh)? 'zh':'en';
+}
+
+function setLang(ele){
+	localStorage.setItem('lang', ele.value);
+	goLang();
+}
+goLang();
 </script>
 
 ### Gacha pool information
