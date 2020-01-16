@@ -1,3 +1,13 @@
+<script type="text/javascript">
+var userLang = navigator.language || navigator.userLanguage;
+var isZh = !!userLang.match('zh');
+var pageEn = !!window.location.hash.match('.en.md$');
+var page = window.location.hash.match('(#!.*)\.md$')[1];
+if(pageEn) page = page.match('(.*)\.en$')[1];
+if(!isZh && !pageEn) window.location.hash = page + '.en.md';
+if(isZh && pageEn) window.location.hash =  page + '.md';
+</script>
+
 ### 註冊已開啟
 
 新的註冊方式已經上線囉 快找以前的戰友一同玩樂吧
