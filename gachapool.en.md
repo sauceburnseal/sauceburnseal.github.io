@@ -8,24 +8,24 @@ if(!isZh && !pageEn) window.location.hash = page + '.en.md';
 if(isZh && pageEn) window.location.hash =  page + '.md';
 </script>
 
-### 蛋池資訊
+### Gacha pool information
 
 **Warning!!**
-**遊戲內顯示的瀏覽畫面不準!!**
+**Units are different from in-game display**
 
-**請`以公告的出貨表為準`!!**
-**別再問為毛抽出來的不一樣!!!**
+**Please refer to the published Gacha list!!**
+**DO NOT asking why there are different!!!**
 
-原則上每個池有10台, 機率均等, 沒抽超過100抽別OO沒有放進去, 那只是單純你臉黑....
+each pool have 10 units, all have same probability.
 
-**`反正抽抽不用錢, 繼續抽就對啦!!!`**
+**`Just keeping Gacha!!!`**
 
 
-### 轉蛋列表 (gacha pool list)
+### Gacha pool list
 
-版本: v0112
+version: v0112
 
-感謝`SAKURA音`大佬整理提供常見簡稱 :)
+Thanks `SAKURA音` for providing some common short name. :)
 
 
 | 蛋池編號(pool No.) | 等級(Rank) | 名稱(Name)                         | 常見簡稱(Common short name)     |
