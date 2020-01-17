@@ -1,4 +1,4 @@
-<select class="btn lang" onchange="setLang(this)" style="display: block; position: absolute; z-index: 50;right:0;">
+<select class="form-control lang" onchange="setLang(this)" style="display:block;position:absolute;z-index:50;right:0;width:auto;">
 	<option value="">auto</option>
 	<option value="zh">zh</option>
 	<option value="en">en</option>
