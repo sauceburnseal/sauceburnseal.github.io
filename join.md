@@ -32,6 +32,43 @@ goLang();
 
 [~~點此(google表單)~~(舊表單目前已關閉, 請改用新方式註冊)](https://docs.google.com/forms/d/e/1FAIpQLSckJFNTx3hw9qQC1FuxM9dkVvExda9fR18dowrv2EQVHxLJZA/viewform)
 
+<hr/>
+
+### bot指令產生器:
+
+#### 註冊帳號!reg:
+
+<div class="input-group">
+	<span class="input-group-addon">登入帳號</span><input id="acc" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="acc001" >
+</div>
+<div class="input-group">
+	<span class="input-group-addon">登入密碼</span><input id="pwd" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="pwd123" >
+</div>
+<div class="input-group">
+<span class="input-group-addon">遊戲暱稱(頭上的)</span><input id="nick" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="MSGO-IMBA" >
+</div>
+
+<hr/>
+
+<div class="input-group"><input id="reg" type="text" class="form-control" placeholder="!reg <acc> <pwd> <nick>" readonly><span class="input-group-btn"><button class="btn btn-default" type="button" onclick="cp(this)">複製</button></span></div>
+
+<hr/>
+<script type="text/javascript">
+function gencmd(ele){
+	var acc = document.querySelector('#acc').value;
+	var pwd = document.querySelector('#pwd').value;
+	var nick = document.querySelector('#nick').value;
+	var all = '!reg '+ acc +' '+ pwd +' '+ nick;
+	document.querySelector('#reg').value = all;
+}
+function cp(ele){
+	var e = document.querySelector('#reg');
+	e.select();
+	e.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+}
+</script>
+
 ### 現階段加入後能獲得:
 
 ps.**前6頁留空**是為了方便玩家放置愛機, 請從**第7頁開始找機體**~~~
