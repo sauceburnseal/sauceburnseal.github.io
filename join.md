@@ -50,7 +50,7 @@ goLang();
 
 <hr/>
 
-<div class="input-group"><input id="reg" type="text" class="form-control" placeholder="!reg <acc> <pwd> <nick>" readonly><span class="input-group-btn"><button class="btn btn-default" type="button" onclick="cp(this)">複製</button></span></div>
+<div class="input-group"><span class="input-group-addon">註冊指令</span><input id="reg" type="text" class="form-control" placeholder="!reg <acc> <pwd> <nick>" readonly><span class="input-group-btn"><button class="btn btn-default" type="button" onclick="cp(this)">複製</button></span></div>
 
 <hr/>
 <script type="text/javascript">
