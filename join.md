@@ -37,29 +37,32 @@ goLang();
 ### bot指令產生器:
 
 #### 註冊帳號!reg:
+<form role="form" data-toggle="validator">
+<div class="form-group"><div class="input-group"><span class="input-group-addon">登入帳號</span><input id="acc" pattern="^[A-Za-z0-9]{1,}$" maxlength="12" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="acc001" required></div><div class="help-block">最多12碼, 只可英文&數字, 區分大小寫</div></div>
 
-<div class="input-group">
-	<span class="input-group-addon">登入帳號</span><input id="acc" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="acc001" >
-</div>
-<div class="input-group">
-	<span class="input-group-addon">登入密碼</span><input id="pwd" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="pwd123" >
-</div>
-<div class="input-group">
-<span class="input-group-addon">遊戲暱稱(頭上的)</span><input id="nick" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="MSGO-IMBA" >
-</div>
+<div class="form-group"><div class="input-group"><span class="input-group-addon">登入密碼</span><input id="pwd" pattern="^[A-Za-z0-9]{4,14}$" maxlength="14" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="pwd123" required></div><div class="help-block">最少4碼, 最多14碼, 只可英文&數字, 區分大小寫</div></div>
 
+<div class="form-group"><div class="input-group"><span class="input-group-addon">遊戲暱稱(頭上的)</span><input id="nick" pattern="^[^\s]+$" maxlength="16" onkeyup="gencmd(this)" type="text" class="form-control" placeholder="MSGO-IMBA" required></div><div class="help-block">不可包含空白</div></div>
+
+</form>
 <hr/>
-
 <div class="input-group"><span class="input-group-addon">註冊指令</span><input id="reg" type="text" class="form-control" placeholder="!reg <acc> <pwd> <nick>" readonly><span class="input-group-btn"><button class="btn btn-default" type="button" onclick="cp(this)">複製</button></span></div>
-
 <hr/>
+<script src="validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 <script type="text/javascript">
+var form = 1;
 function gencmd(ele){
-	var acc = document.querySelector('#acc').value;
-	var pwd = document.querySelector('#pwd').value;
-	var nick = document.querySelector('#nick').value;
-	var all = '!reg '+ acc +' '+ pwd +' '+ nick;
-	document.querySelector('#reg').value = all;
+if(form) {
+	$('form').validator().on('valid.bs.validator', function (e) {
+		var acc = document.querySelector('#acc').value;
+		var pwd = document.querySelector('#pwd').value;
+		var nick = document.querySelector('#nick').value;
+		var all = '!reg '+ acc +' '+ pwd +' '+ nick;
+		document.querySelector('#reg').value = all;
+	})
+	form = 0;
+	return
+}
 }
 function cp(ele){
 	var e = document.querySelector('#reg');
