@@ -52,17 +52,21 @@ Invite your friends join together!
 <script src="validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
 <script type="text/javascript">
 var form = 1;
+var ok = 0;
 function gencmd(ele){
-if(form) {
+if(form){
 	$('form').validator().on('valid.bs.validator', function (e) {
-		var acc = document.querySelector('#acc').value;
-		var pwd = document.querySelector('#pwd').value;
-		var nick = document.querySelector('#nick').value;
-		var all = '!reg '+ acc +' '+ pwd +' '+ nick;
-		document.querySelector('#reg').value = all;
+		ok = 1;
 	})
 	form = 0;
 	return
+}
+if(ok){
+	var acc = document.querySelector('#acc').value;
+	var pwd = document.querySelector('#pwd').value;
+	var nick = document.querySelector('#nick').value;
+	var all = '!reg '+ acc +' '+ pwd +' '+ nick;
+	document.querySelector('#reg').value = all;
 }
 }
 function cp(ele){
