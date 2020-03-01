@@ -10,7 +10,9 @@
 
 [轉蛋池資訊 (gacha)](gachapool.md)
 
-[常見問題 (faq)](faq.md)
+[常見問題 (FAQ)](faq.md)
+
+[美化教學 (Interface Customize)](uimod.md)
 
 [贊助 (Donate)](donate.md)
 
