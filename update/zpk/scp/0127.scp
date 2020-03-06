@@ -1,0 +1,1103 @@
+function GameMode4_Rule_LuaInit(GameMode)
+  g_GameMode_004_Step = {}
+  g_GameMode_004_Step.Init = {}
+  g_GameMode_004_Step.Update = {}
+  g_GameMode_004_Step.Release = {}
+  g_nNowGameModeStep = 0
+  g_GameMode_004_Step.Init[0] = GameMode_004_Step00_Init
+  g_GameMode_004_Step.Update[0] = GameMode_004_Step00_Update
+  g_GameMode_004_Step.Release[0] = GameMode_004_Step00_Release
+  _GAMEMODE_004_STEP_01 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_01_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_02 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_02_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_03 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_03_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_04 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_04_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_05 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_05_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_06 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_06_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_07 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_07_D = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_08 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_09 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_10 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_11 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_12 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_13 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_14 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_15 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_16 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_17 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_18 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_19 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_19_I1 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_20 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_21 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_22 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_23 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_24 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_24_I2 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_25 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_26 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_27 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_28 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_29 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_30 = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_MISSION_SUCCESS = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_MISSION_RESTART = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_MISSION_FAIL = GameMode:AddStepNum()
+  _GAMEMODE_004_STEP_MISSION_CONTINUE = GameMode:AddStepNum()
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_01] = GameMode_004_Step01_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_01] = GameMode_004_Step01_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_01] = GameMode_004_Step01_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_01_D] = GameMode_004_Step01_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_01_D] = GameMode_004_Step01_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_01_D] = GameMode_004_Step01_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_02] = GameMode_004_Step02_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_02] = GameMode_004_Step02_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_02] = GameMode_004_Step02_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_02_D] = GameMode_004_Step02_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_02_D] = GameMode_004_Step02_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_02_D] = GameMode_004_Step02_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_03] = GameMode_004_Step03_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_03] = GameMode_004_Step03_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_03] = GameMode_004_Step03_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_03_D] = GameMode_004_Step03_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_03_D] = GameMode_004_Step03_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_03_D] = GameMode_004_Step03_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_04] = GameMode_004_Step04_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_04] = GameMode_004_Step04_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_04] = GameMode_004_Step04_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_04_D] = GameMode_004_Step04_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_04_D] = GameMode_004_Step04_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_04_D] = GameMode_004_Step04_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_05] = GameMode_004_Step05_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_05] = GameMode_004_Step05_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_05] = GameMode_004_Step05_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_05_D] = GameMode_004_Step05_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_05_D] = GameMode_004_Step05_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_05_D] = GameMode_004_Step05_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_06] = GameMode_004_Step06_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_06] = GameMode_004_Step06_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_06] = GameMode_004_Step06_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_06_D] = GameMode_004_Step06_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_06_D] = GameMode_004_Step06_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_06_D] = GameMode_004_Step06_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_07] = GameMode_004_Step07_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_07] = GameMode_004_Step07_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_07] = GameMode_004_Step07_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_07_D] = GameMode_004_Step07_D_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_07_D] = GameMode_004_Step07_D_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_07_D] = GameMode_004_Step07_D_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_08] = GameMode_004_Step08_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_08] = GameMode_004_Step08_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_08] = GameMode_004_Step08_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_09] = GameMode_004_Step09_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_09] = GameMode_004_Step09_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_09] = GameMode_004_Step09_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_10] = GameMode_004_Step10_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_10] = GameMode_004_Step10_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_10] = GameMode_004_Step10_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_11] = GameMode_004_Step11_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_11] = GameMode_004_Step11_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_11] = GameMode_004_Step11_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_12] = GameMode_004_Step12_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_12] = GameMode_004_Step12_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_12] = GameMode_004_Step12_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_13] = GameMode_004_Step13_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_13] = GameMode_004_Step13_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_13] = GameMode_004_Step13_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_14] = GameMode_004_Step14_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_14] = GameMode_004_Step14_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_14] = GameMode_004_Step14_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_15] = GameMode_004_Step15_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_15] = GameMode_004_Step15_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_15] = GameMode_004_Step15_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_16] = GameMode_004_Step16_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_16] = GameMode_004_Step16_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_16] = GameMode_004_Step16_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_17] = GameMode_004_Step17_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_17] = GameMode_004_Step17_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_17] = GameMode_004_Step17_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_18] = GameMode_004_Step18_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_18] = GameMode_004_Step18_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_18] = GameMode_004_Step18_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_19] = GameMode_004_Step19_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_19] = GameMode_004_Step19_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_19] = GameMode_004_Step19_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_19_I1] = GameMode_004_Step19_I1_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_19_I1] = GameMode_004_Step19_I1_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_19_I1] = GameMode_004_Step19_I1_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_20] = GameMode_004_Step20_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_20] = GameMode_004_Step20_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_20] = GameMode_004_Step20_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_21] = GameMode_004_Step21_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_21] = GameMode_004_Step21_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_21] = GameMode_004_Step21_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_22] = GameMode_004_Step22_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_22] = GameMode_004_Step22_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_22] = GameMode_004_Step22_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_23] = GameMode_004_Step23_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_23] = GameMode_004_Step23_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_23] = GameMode_004_Step23_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_24] = GameMode_004_Step24_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_24] = GameMode_004_Step24_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_24] = GameMode_004_Step24_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_24_I2] = GameMode_004_Step24_I2_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_24_I2] = GameMode_004_Step24_I2_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_24_I2] = GameMode_004_Step24_I2_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_25] = GameMode_004_Step25_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_25] = GameMode_004_Step25_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_25] = GameMode_004_Step25_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_26] = GameMode_004_Step26_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_26] = GameMode_004_Step26_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_26] = GameMode_004_Step26_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_27] = GameMode_004_Step27_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_27] = GameMode_004_Step27_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_27] = GameMode_004_Step27_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_28] = GameMode_004_Step28_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_28] = GameMode_004_Step28_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_28] = GameMode_004_Step28_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_29] = GameMode_004_Step29_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_29] = GameMode_004_Step29_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_29] = GameMode_004_Step29_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_30] = GameMode_004_Step30_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_30] = GameMode_004_Step30_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_30] = GameMode_004_Step30_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_MISSION_RESTART] = GameMode_004_Step_Restart_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_MISSION_RESTART] = GameMode_004_Step_Restart_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_MISSION_RESTART] = GameMode_004_Step_Restart_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_MISSION_FAIL] = GameMode_004_Step_Fail_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_MISSION_FAIL] = GameMode_004_Step_Fail_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_MISSION_FAIL] = GameMode_004_Step_Fail_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_MISSION_SUCCESS] = GameMode_004_Step_Success_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_MISSION_SUCCESS] = GameMode_004_Step_Success_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_MISSION_SUCCESS] = GameMode_004_Step_Success_Release
+  g_GameMode_004_Step.Init[_GAMEMODE_004_STEP_MISSION_CONTINUE] = GameMode_004_Step_Continue_Init
+  g_GameMode_004_Step.Update[_GAMEMODE_004_STEP_MISSION_CONTINUE] = GameMode_004_Step_Continue_Update
+  g_GameMode_004_Step.Release[_GAMEMODE_004_STEP_MISSION_CONTINUE] = GameMode_004_Step_Continue_Release
+  SetNpcPoolA(GameMode, 11003, 20)
+  SetNpcPoolA(GameMode, 11001, 20)
+  SetNpcPoolA(GameMode, 11003, 20)
+  local tDocument = GetDocument()
+  local t_LocalPlayer = CastingUnit(tDocument:GetLocalPlayer())
+  SetMainPlayer(t_LocalPlayer:GetID())
+  SetGameModeTarget(GetMainPlayer())
+  g_MainBase = t_LocalPlayer
+  ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  SetStageTime(900)
+  return 1
+end
+function GameMode_004_Step00_Init(GameMode)
+end
+function GameMode_004_Step00_Update(GameMode)
+end
+function GameMode_004_Step00_Release(GameMode)
+end
+function GameMode4_Rule_Develop(GameMode)
+  if CheckKeyBoard(DIK_RETURN) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode4_Rule_Update(GameMode)
+  g_nNowGameModeStep = GameMode:GetStep()
+  g_GameMode_004_Step.Update[g_nNowGameModeStep](GameMode)
+  GameMode_004_MissionFailCheck(GameMode)
+  if GetTime() >= 900 then
+    ChangeGameModeStep(GameMode, _GAMEMODE_004_STEP_MISSION_SUCCESS, g_GameMode_004_Step)
+  end
+  GameMode_004_MissionSuccessCheck(GameMode)
+  return 1
+end
+function GameMode_004_MissionFailCheck(GameMode)
+  if g_nNowGameModeStep ~= 0 and g_nNowGameModeStep ~= _GAMEMODE_004_STEP_MISSION_FAIL and g_nNowGameModeStep ~= _GAMEMODE_004_STEP_MISSION_CONTINUE and false == CheckObejctAlive(g_GameModeTargetID) then
+    GameMode:SetRestartStep(g_nNowGameModeStep)
+    ChangeGameModeStep(GameMode, _GAMEMODE_004_STEP_MISSION_FAIL, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_MissionSuccessCheck(GameMode)
+  if g_nNowGameModeStep == 0 or g_nNowGameModeStep == _GAMEMODE_004_STEP_MISSION_FAIL or g_nNowGameModeStep == _GAMEMODE_004_STEP_MISSION_CONTINUE or g_nNowGameModeStep == _GAMEMODE_004_STEP_040 then
+  end
+end
+function GameMode_004_Step01_Init(GameMode)
+  local tDocument = GetDocument()
+  local t_LocalPlayer = CastingUnit(tDocument:GetLocalPlayer())
+  SetMainPlayer(t_LocalPlayer:GetID())
+
+  t_LocalPlayer:SetHp(t_LocalPlayer:GetMaxHp() * 0.2)
+
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(39, 0, 2000)
+  t_tbPos[1] = vector3(500, 0, 2100)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85047, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+    t_npc:SetMoveType(UNIT_MOVE_EVENT_DASH)
+  end
+  PutOperation(203, 3)
+end
+function GameMode_004_Step01_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step01_Release(GameMode)
+end
+function GameMode_004_Step01_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step01_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step01_D_Release(GameMode)
+end
+function GameMode_004_Step02_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1800)
+  t_tbPos[1] = vector3(-1600, 0, 1902)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85047, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step02_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step02_Release(GameMode)
+end
+function GameMode_004_Step02_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step02_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step02_D_Release(GameMode)
+end
+function GameMode_004_Step03_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1800)
+  t_tbPos[1] = vector3(-1600, 0, 1902)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85047, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step03_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step03_Release(GameMode)
+end
+function GameMode_004_Step03_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step03_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step03_D_Release(GameMode)
+end
+function GameMode_004_Step04_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1532, 0, 1800)
+  t_tbPos[1] = vector3(-1300, 0, 2200)
+  t_tbPos[2] = vector3(-1630, 0, 2000)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85048, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step04_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step04_Release(GameMode)
+end
+function GameMode_004_Step04_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step04_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step04_D_Release(GameMode)
+end
+function GameMode_004_Step05_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(0, 0, 2000)
+  t_tbPos[1] = vector3(-1000, 0, 2100)
+  t_tbPos[2] = vector3(1000, 0, 2205)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85048, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step05_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step05_Release(GameMode)
+end
+function GameMode_004_Step05_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step05_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step05_D_Release(GameMode)
+end
+function GameMode_004_Step06_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1800)
+  t_tbPos[1] = vector3(-1400, 0, 2200)
+  t_tbPos[2] = vector3(1400, 0, 2199)
+  t_tbPos[3] = vector3(1550, 0, 2000)
+  for i = 0, 3 do
+    t_npc = GameMode:CreateNpc(85048, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step06_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step06_Release(GameMode)
+end
+function GameMode_004_Step06_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step06_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step06_D_Release(GameMode)
+end
+function GameMode_004_Step07_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(390, 0, 1986)
+  t_tbPos[1] = vector3(-400, 0, 1985)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85048, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1000, 0, 2200)
+  t_tbPos[1] = vector3(-1000, 0, 2200)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step07_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step07_Release(GameMode)
+end
+function GameMode_004_Step07_D_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step07_D_Update(GameMode)
+  if GameMode:LaterCheckTime(2) == true then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step07_D_Release(GameMode)
+end
+function GameMode_004_Step08_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-500, 0, 1850)
+  t_tbPos[1] = vector3(1000, 0, 1850)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(39, 0, 2100)
+  t_tbPos[1] = vector3(700, 0, 2000)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(900, 0, 1800)
+  t_tbPos[1] = vector3(100, 0, 1600)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step08_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step08_Release(GameMode)
+end
+function GameMode_004_Step09_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(550, 0, 1686)
+  t_tbPos[1] = vector3(12, 0, 1899)
+  t_tbPos[2] = vector3(-550, 0, 1199)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-352, 0, 1729)
+  t_tbPos[1] = vector3(1073, 0, 2002)
+  t_tbPos[2] = vector3(39, 0, 2099)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step09_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step09_Release(GameMode)
+end
+function GameMode_004_Step10_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(550, 0, 1786)
+  t_tbPos[1] = vector3(12, 0, 1699)
+  t_tbPos[2] = vector3(-1000, 0, 1999)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1929)
+  t_tbPos[1] = vector3(173, 0, 2002)
+  t_tbPos[2] = vector3(1300, 0, 2199)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step10_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step10_Release(GameMode)
+end
+function GameMode_004_Step11_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(390, 0, 1686)
+  t_tbPos[1] = vector3(-500, 0, 1499)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, -400)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step11_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step11_Release(GameMode)
+end
+function GameMode_004_Step12_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1000)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1000, 0, 1200)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1400, 0, 1200)
+  t_tbPos[1] = vector3(29, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step12_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step12_Release(GameMode)
+end
+function GameMode_004_Step13_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(100, 0, 1686)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-100, 0, 1000)
+  t_tbPos[1] = vector3(-800, 0, 1400)
+  t_tbPos[2] = vector3(-1900, 0, 1500)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(800, 0, 1800)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step13_Update(GameMode)
+  if true == GameMode:LaterCheckTime(5) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step13_Release(GameMode)
+end
+function GameMode_004_Step14_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(29, 0, 1686)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1200, 0, 1600)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1200, 0, 400)
+  t_tbPos[1] = vector3(1600, 0, -400)
+  t_tbPos[2] = vector3(-300, 0, -100)
+  t_tbPos[3] = vector3(-1200, 0, 0)
+  for i = 0, 3 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step14_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step14_Release(GameMode)
+end
+function GameMode_004_Step15_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(390, 0, 1686)
+  t_tbPos[1] = vector3(1000, 0, 2000)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-600, 0, 800)
+  t_tbPos[1] = vector3(-1600, 0, 900)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step15_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step15_Release(GameMode)
+end
+function GameMode_004_Step16_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(200, 0, 1400)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-800, 0, -100)
+  t_tbPos[1] = vector3(1200, 0, 900)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step16_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step16_Release(GameMode)
+end
+function GameMode_004_Step17_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(39, 0, 400)
+  t_tbPos[1] = vector3(-500, 0, 400)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(100, 0, 1600)
+  t_tbPos[1] = vector3(-1600, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(400, 0, 1200)
+  t_tbPos[1] = vector3(900, 0, 1200)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step17_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step17_Release(GameMode)
+end
+function GameMode_004_Step18_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(400, 0, 1600)
+  t_tbPos[1] = vector3(-900, 0, 1900)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(39, 0, 1400)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1200, 0, 1600)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step18_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step18_Release(GameMode)
+end
+function GameMode_004_Step19_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(800, 200, 1800)
+  t_tbPos[1] = vector3(-1400, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1638, 0, -400)
+  t_tbPos[1] = vector3(-300, 0, -580)
+  t_tbPos[2] = vector3(120, 400, 1400)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step19_Update(GameMode)
+  if true == GameMode:LaterCheckTime(1) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step19_Release(GameMode)
+end
+function GameMode_004_Step19_I1_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-100, 200, 1305)
+  t_npc = GameMode:CreateNpc(85049, t_tbPos[0], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  t_npc:SetMoveTargetPos(vector3(-100, 200, -100))
+end
+function GameMode_004_Step19_I1_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step19_I1_Release(GameMode)
+end
+function GameMode_004_Step20_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(39, 0, 1600)
+  t_tbPos[1] = vector3(1000, 0, 1600)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1400, 0, -200)
+  t_tbPos[1] = vector3(-450, 0, 300)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step20_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step20_Release(GameMode)
+end
+function GameMode_004_Step21_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(400, 0, 1800)
+  t_tbPos[1] = vector3(-400, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1638, 0, -400)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1638, 0, 1630)
+  t_tbPos[1] = vector3(1638, 0, 1638)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step21_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step21_Release(GameMode)
+end
+function GameMode_004_Step22_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1000, 0, 2000)
+  t_tbPos[1] = vector3(-1638, 0, -700)
+  t_tbPos[2] = vector3(1638, 0, 800)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-800, 0, -1000)
+  t_tbPos[1] = vector3(1000, 0, -1000)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step22_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step22_Release(GameMode)
+end
+function GameMode_004_Step23_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1000, 0, 2000)
+  t_tbPos[1] = vector3(-1638, 0, -700)
+  t_tbPos[2] = vector3(1638, 0, -800)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-800, 0, -1000)
+  t_tbPos[1] = vector3(1000, 0, -1000)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step23_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step23_Release(GameMode)
+end
+function GameMode_004_Step24_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1638, 0, -528)
+  for i = 0, 0 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1100, 0, 312)
+  t_tbPos[1] = vector3(1200, 0, 800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1400, 200, 1500)
+  t_tbPos[1] = vector3(-1400, 100, 1200)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step24_Update(GameMode)
+  if true == GameMode:LaterCheckTime(3) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step24_Release(GameMode)
+end
+function GameMode_004_Step24_I2_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-100, 200, 1305)
+  t_npc = GameMode:CreateNpc(85049, t_tbPos[0], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  t_npc:SetMoveTargetPos(vector3(-100, 0, 0))
+end
+function GameMode_004_Step24_I2_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step24_I2_Release(GameMode)
+end
+function GameMode_004_Step25_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1638, 0, -700)
+  t_tbPos[1] = vector3(1200, 0, 1600)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1400, 0, -528)
+  t_tbPos[1] = vector3(1638, 0, -505)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step25_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step25_Release(GameMode)
+end
+function GameMode_004_Step26_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-500, 0, -500)
+  t_tbPos[1] = vector3(39, 0, 1400)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1200, 0, 1600)
+  t_tbPos[1] = vector3(-1400, 0, 1400)
+  t_tbPos[2] = vector3(1638, 0, -900)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step26_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step26_Release(GameMode)
+end
+function GameMode_004_Step27_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1655, 0, -700)
+  t_tbPos[1] = vector3(-1655, 0, 1700)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1638, 0, 1700)
+  t_tbPos[1] = vector3(1400, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1638, 0, -300)
+  t_tbPos[1] = vector3(1800, 0, -800)
+  t_tbPos[2] = vector3(39, 0, 2100)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step27_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step27_Release(GameMode)
+end
+function GameMode_004_Step28_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1800, 0, 1800)
+  t_tbPos[1] = vector3(-1900, 0, -500)
+  t_tbPos[2] = vector3(-2100, 0, 300)
+  for i = 0, 2 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1900, 0, -1000)
+  t_tbPos[1] = vector3(1638, 0, 2000)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(2000, 0, 2100)
+  t_tbPos[1] = vector3(-1000, 0, 1800)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step28_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step28_Release(GameMode)
+end
+function GameMode_004_Step29_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1600, 0, 2000)
+  t_tbPos[1] = vector3(-1200, 0, -300)
+  t_tbPos[2] = vector3(-1800, 0, 400)
+  t_tbPos[3] = vector3(1800, 0, -200)
+  for i = 0, 3 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1950, 0, 700)
+  t_tbPos[1] = vector3(-1900, 0, -800)
+  t_tbPos[2] = vector3(-1000, 0, 2200)
+  t_tbPos[3] = vector3(1500, 0, 1900)
+  for i = 0, 3 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step29_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step29_Release(GameMode)
+end
+function GameMode_004_Step30_Init(GameMode)
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-1900, 0, -200)
+  t_tbPos[1] = vector3(-1700, 0, 400)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(1700, 0, 1000)
+  t_tbPos[1] = vector3(39, 0, 1800)
+  t_tbPos[2] = vector3(200, 0, 2100)
+  t_tbPos[3] = vector3(-2100, 0, -800)
+  for i = 0, 3 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+  local t_npc
+  local t_tbPos = {}
+  t_tbPos[0] = vector3(-2000, 0, -1200)
+  t_tbPos[1] = vector3(2000, 0, -1200)
+  for i = 0, 1 do
+    t_npc = GameMode:CreateNpc(85049, t_tbPos[i], OBJECT_TEAM_BLUE, vector3(0, 0, 1))
+  end
+end
+function GameMode_004_Step30_Update(GameMode)
+  if 0 >= GetNumNpc(OBJECT_TEAM_BLUE) then
+    ChangeGameModeStep(GameMode, 0, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step30_Release(GameMode)
+end
+function GameMode_004_Step_Fail_Init(GameMode)
+  GameMode:SetCheckTime()
+end
+function GameMode_004_Step_Fail_Update(GameMode)
+  if GameMode:LaterCheckTime(3) == true then
+    GameMode:StartContinue()
+    ChangeGameModeStep(GameMode, _GAMEMODE_004_STEP_MISSION_CONTINUE, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step_Fail_Release(GameMode)
+end
+function GameMode_004_Step_Continue_Init(GameMode)
+end
+function GameMode_004_Step_Continue_Update(GameMode)
+  if GameMode:GetModeState() == _GAMEMODE_GAMEPLAY then
+    ChangeGameModeStep(GameMode, _GAMEMODE_004_STEP_MISSION_RESTART, g_GameMode_004_Step)
+  end
+end
+function GameMode_004_Step_Continue_Release(GameMode)
+end
+function GameMode_004_Step_Restart_Init(GameMode)
+end
+function GameMode_004_Step_Restart_Update(GameMode)
+  ChangeGameModeStep(GameMode, GameMode:GetRestartStep(), g_GameMode_004_Step)
+end
+function GameMode_004_Step_Restart_Release(GameMode)
+end
+function GameMode_004_Step_Success_Init(GameMode)
+  GameMode:StartStageClear()
+end
+function GameMode_004_Step_Success_Update(GameMode)
+end
+function GameMode_004_Step_Success_Release(GameMode)
+end
