@@ -1,3 +1,16 @@
+### 重要！ 不要相信謠言！！
+
+![rumor](wtf.png)
+
+**請不要相信謠言!!**  所有伺服(除了泰服), 包括米粉, 都是使用我們(醬燒海豹)的海豹核心, 有經過同意的服皆用"穩定測試及bug回報"的名義跟我們拿取伺服端模擬程式開服.
+我們(醬燒海豹)是完整獨立的服, 有自己的開發跟維運, 不屬於任何其他服~
+
+**No, absolutely NOT TRUE.** All servers(except thai), including `SGNoodle`, are using our (`Sauce Burn Seal`) **server side emulator** codebase;
+All authorized servers using codebase for "stably test and bug report".
+That means, We (`Sauce Burn Seal`) are a independent server, **NOT testing server for any other server**!
+
+------
+
 ### 目前以及接下來的階段
 
 **現階段機體全開、道具、技能部件無限用**，各位安心爽打即可
