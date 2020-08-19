@@ -16,6 +16,8 @@
 
 [贊助 (Donate)](donate.md)
 
+[YTB工具](dddd/)
+
 [gimmick:theme (inverse: false)](spacelab)
 
 [gimmick:ThemeChooser](Change theme)
