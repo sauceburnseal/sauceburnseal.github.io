@@ -18,6 +18,8 @@
 
 [YTB工具](dddd/)
 
+[DDoS紀念館](gotddos/gotddos.md)
+
 [gimmick:theme (inverse: false)](spacelab)
 
 [gimmick:ThemeChooser](Change theme)
