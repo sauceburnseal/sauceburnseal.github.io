@@ -21,6 +21,8 @@ That means, We (`Sauce Burn Seal`) are a independent server, **NOT testing serve
 
 洗掉機庫的時間與各機體定價/取得方法等還尚未確定，現階段參與測試的玩家會視參與程度給不同程度的獎勵/補償，確定後會再公告。
 
+ps.洗掉機庫的主因是太多玩家不看自己機庫有哪些機體，一直問怎沒有XXX，
+所以，自己取得就沒有這個煩惱了~~
 
 ------
 
