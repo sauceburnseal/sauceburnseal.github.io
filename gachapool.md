@@ -676,4 +676,21 @@ goLang();
 |                 58 	| BS          	| 異端鋼彈藍色機2L型	                 	| ASTRAY BLUE SECOND L                      		|                                   	|
 |                 58 	| BS         	| 異端鋼彈藍色機2L型(陽電子炮裝備)          | ASTRAY BLUE SECOND L(LOHENGRIN LAUNCHER)     		|                                   	|
 |                 58 	| SS         	| 攻擊自由鋼彈                   			| Strike Freedom Gundam                		     	|                                   	|
-|                 58 	|            	|                                         	|                                                	|                                   	|
+|                 58 	| S         	| 獨角獸鋼彈	                           	| Unicorn Gundam                     		     	|                                   	|
+|                 58 	| S          	| X鋼彈	                                	| X Gundam                                        	|                                   	|
+|                 58 	| AR          	| 能天使鋼彈R2                            	| Gundam EXIA RepairII                            	|                                   	|
+|                 58 	| AR         	| 雪崩型能天使鋼彈                       	| Gundam Avalanche EXIA                           	|                                   	|
+|                 58 	| AR         	| 雪崩突進型能天使鋼彈                     	| Gundam Avalanche EXIA Dash                       	|                                   	|
+|                 58 	| AR         	| 1鋼彈               	                	| 1 Gundam                                      	|                                   	|
+|                    	|            	|                                         	|                                                	|                                   	|
+|                 59 	| AS         	| 鋼彈X魔王	                            	| Gundam X MAOH                                    	|                                   	|
+|                 59	| AR         	| 戰國異端鋼彈                             	| Sengoku Astray Gundam                         	|                                   	|
+|                 59 	| AS         	| 翔翼型攻擊鋼彈                         	| Aile Strike                          		      	|                                   	|
+|                 59 	| BR        	| 飛翼鋼彈EW	                           	| Wing Gundam (EW)                                	|                                   	|
+|                 59 	| BR           	| 死神鋼彈EW                             	| Gundam Deathscythe(EW)                           	|                                   	|
+|                 59 	| BR         	| 神龍鋼彈EW                             	| Shenlong Gundam (EW)                             	|                                   	|
+|                 59 	| BR         	| 沙漠鋼彈EW                              	| Gundam Sandrock (EW)                          	|                                   	|
+|                 59 	| BR         	| 重武裝鋼彈EW                           	| Gundam Heavy Arms(EW)                           	|                                   	|
+|                 59 	| SS         	| ν鋼彈HWS	                            	| ν Gundam HWS                                     	|                                   	|
+|                 59 	| S          	| 阿爾瓦托雷                            	| Alvatore                               		  	|                                   	|
+|                    	|            	|                                         	|                                                	|                                   	|
