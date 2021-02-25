@@ -672,5 +672,8 @@ goLang();
 |                 57 	| S          	| Z II                                    	| Z II                                           	| Z2                                	|
 |                 57 	| SS         	| 七槍型智天使鋼彈                        	| Cherudim Gundam Saga                           	|                                   	|
 |                    	|            	|                                         	|                                                	|                                   	|
-|                    	|            	|                                         	|                                                	|                                   	|
-
+|                 58 	| S           	| 須左之男                                	| SUSANOWO                                          |                                   	|
+|                 58 	| BS          	| 異端鋼彈藍色機2L型	                 	| ASTRAY BLUE SECOND L                      		|                                   	|
+|                 58 	| BS         	| 異端鋼彈藍色機2L型(陽電子炮裝備)          | ASTRAY BLUE SECOND L(LOHENGRIN LAUNCHER)     		|                                   	|
+|                 58 	| SS         	| 攻擊自由鋼彈                   			| Strike Freedom Gundam                		     	|                                   	|
+|                 58 	|            	|                                         	|                                                	|                                   	|
