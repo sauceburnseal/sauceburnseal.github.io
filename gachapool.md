@@ -673,11 +673,11 @@ goLang();
 |                 57 	| SS         	| 七槍型智天使鋼彈                        	| Cherudim Gundam Saga                           	|                                   	|
 |                    	|            	|                                         	|                                                	|                                   	|
 |                 58 	| S           	| 須左之男                                	| SUSANOWO                                          |                                   	|
-|                 58 	| BS          	| 異端鋼彈藍色機2L型	                 	| ASTRAY BLUE SECOND L                      		|                                   	|
-|                 58 	| BS         	| 異端鋼彈藍色機2L型(陽電子炮裝備)          | ASTRAY BLUE SECOND L(LOHENGRIN LAUNCHER)     		|                                   	|
+|                 58 	| BR          	| 卡普爾(柯連專用機)	                 	|  			                      					|                                   	|
+|                 58 	| AS         	| 漆黑攻擊鋼彈(二聯裝線性炮)	  			| 					    							|                                   	|
 |                 58 	| SS         	| 攻擊自由鋼彈                   			| Strike Freedom Gundam                		     	|                                   	|
-|                 58 	| S         	| 獨角獸鋼彈	                           	| Unicorn Gundam                     		     	|                                   	|
-|                 58 	| S          	| X鋼彈	                                	| X Gundam                                        	|                                   	|
+|                 58 	| A         	| 獨角獸鋼彈	                           	| Unicorn Gundam                     		     	|                                   	|
+|                 58 	| A          	| X鋼彈	                                	| X Gundam                                        	|                                   	|
 |                 58 	| AR          	| 能天使鋼彈R2                            	| Gundam EXIA RepairII                            	|                                   	|
 |                 58 	| AR         	| 雪崩型能天使鋼彈                       	| Gundam Avalanche EXIA                           	|                                   	|
 |                 58 	| AR         	| 雪崩突進型能天使鋼彈                     	| Gundam Avalanche EXIA Dash                       	|                                   	|
@@ -694,3 +694,14 @@ goLang();
 |                 59 	| SS         	| ν鋼彈HWS	                            	| ν Gundam HWS                                     	|                                   	|
 |                 59 	| S          	| 阿爾瓦托雷                            	| Alvatore                               		  	|                                   	|
 |                    	|            	|                                         	|                                                	|                                   	|
+|                 60 	| AR         	| 鋼彈F91幻象	                            	|				                                   	|                                   	|
+|                 60	| AR         	| ZETA PLUS A1                          	   	| 						                         	|                                   	|
+|                 60 	| S         	| GN Arms Type-E 能天使鋼彈                    	|			                         		      	|                                   	|
+|                 60 	| S      	  	| GN Arms Type-D 力天使鋼彈	                   	| 				                                	|                                   	|
+|                 60 	| S           	| 獨角獸鋼彈二號機 報喪女妖(NT-D)              	| 						                           	|                                   	|
+|                 60 	| C         	| 鋼坦克                            		 	| 					                             	|                                   	|
+|                 60 	| AS         	| 另類試制型炮裝攻擊E盧卡斯專用機             	| 						                          	|                                   	|
+|                 60 	| C         	| 薩克II                         			 	| 						                           	|                                   	|
+|                 60 	| CR         	| 力克‧德姆	                       		     	| 			                                     	|                                   	|
+|                 60 	| A          	| 艾爾美斯                          		  	| 			                               		  	|                                   	|
+|                    	|            	|                  		                       	|                                                	|                                   	|
