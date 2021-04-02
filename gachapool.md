@@ -685,7 +685,7 @@ goLang();
 |                    	|            	|                                         	|                                                	|                                   	|
 |                 59 	| AS         	| 鋼彈X魔王	                            	| Gundam X MAOH                                    	|                                   	|
 |                 59	| AR         	| 戰國異端鋼彈                             	| Sengoku Astray Gundam                         	|                                   	|
-|                 59 	| AS         	| 翔翼型攻擊鋼彈                         	| Aile Strike                          		      	|                                   	|
+|                 59 	| AR         	| 翠綠暴風鋼彈（二連裝光束步槍）            	| 	                          		      	|                                   	|
 |                 59 	| BR        	| 飛翼鋼彈EW	                           	| Wing Gundam (EW)                                	|                                   	|
 |                 59 	| BR           	| 死神鋼彈EW                             	| Gundam Deathscythe(EW)                           	|                                   	|
 |                 59 	| BR         	| 神龍鋼彈EW                             	| Shenlong Gundam (EW)                             	|                                   	|
