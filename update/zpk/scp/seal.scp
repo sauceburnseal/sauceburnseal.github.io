@@ -385,7 +385,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 				elseif object:IsTargetLocalPlayer() == true then
 					pCamera:SetCameraPosEx(vector3(-300, 300, 400), 1)
 					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
-					pCamera:SetCameraRotate(160, 0.5)
+					pCamera:SetCameraRotate(-20, 0.5)
 				end
 
 				local pGameInterface = GetGameInterface()
@@ -459,7 +459,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 100, -200), 0.06)
 			pCamera:SetDestOffsetPos(vector3(0, 140, -300))
-			pCamera:SetCameraRotate(180, 0.06)
+			pCamera:SetCameraRotate(0, 0.06)
 		end
 		object:ChangeAnim("atk0_stay04")
 		object:AddCurCombo()
@@ -475,7 +475,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(-100, 0, 200), 0.06)
 			pCamera:SetDestOffsetPos(vector3(0, 150, -50))
-			pCamera:SetCameraRotate(180, 0.06)
+			pCamera:SetCameraRotate(0, 0.06)
 		end
 		object:ChangeAnim("atk0_stay05")
 		object:AddCurCombo()
@@ -491,7 +491,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(50, 110, 50), 0.1)
 			pCamera:SetDestOffsetPos(vector3(25, 175, -365))
-			pCamera:SetCameraRotate(180, 0.1)
+			pCamera:SetCameraRotate(0, 0.1)
 		end
 		object:ChangeAnim("atk0_stay06")
 		object:AddCurCombo()
@@ -507,7 +507,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(250, 200, 300), 0.2)
 			pCamera:SetDestOffsetPos(vector3(50, 130, 100))
-			pCamera:SetCameraRotate(150, 0.2)
+			pCamera:SetCameraRotate(0, 0.2)
 		end
 		object:ChangeAnim("atk0_stay07")
 		object:AddCurCombo()
@@ -551,7 +551,7 @@ _RTenshihoSimaYiSazabiSpecialAttack = __sealFn({
 				elseif object:IsTargetLocalPlayer() == true then
 					pCamera:SetCameraPosEx(vector3(400, 150, 300), 1)
 					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
-					pCamera:SetCameraRotate(160, 0.5)
+					pCamera:SetCameraRotate(-20, 0.5)
 				end
 
 				local pGameInterface = GetGameInterface()
@@ -657,7 +657,7 @@ _RTenshihoSimaYiSazabiSpecialAttack = __sealFn({
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(250, 130, 300), 0.2)
 			pCamera:SetDestOffsetPos(vector3(50, 130, 100))
-			pCamera:SetCameraRotate(180, 0.2)
+			pCamera:SetCameraRotate(0, 0.2)
 		end
 		object:ChangeAnim("atk0_stay06")
 		object:AddCurCombo()
