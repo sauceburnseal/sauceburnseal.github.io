@@ -909,7 +909,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 				pCamera:SetCameraRotate(280, 0.1)
 			elseif object:IsTargetLocalPlayer() == true then
 				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
-				pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 				pCamera:SetCameraRotate(100, 0.1)
 			end
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
@@ -932,7 +932,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(250, 0.03)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 200, -800), 0.03)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 			pCamera:SetCameraRotate(70, 0.03)
 		end
 		object:ChangeAnim("atk0_stay02")
@@ -950,7 +950,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(190, 0.03)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 150, -800), 0.03)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 400))
+			pCamera:SetDestOffsetPos(vector3(0, 100, 100))
 			pCamera:SetCameraRotate(10, 0.03)
 		end
 		object:ChangeAnim("atk0_stay03")
@@ -968,7 +968,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(250, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 50, -600), 0.1)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 			pCamera:SetCameraRotate(70, 0.1)
 		end
 		object:ChangeAnim("atk0_stay04")
@@ -986,7 +986,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(230, 0.2)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 450, -800), 0.2)
-			pCamera:SetDestOffsetPos(vector3(0, 50, 300))
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(50, 0.2)
 		end
 		object:ChangeAnim("atk0_stay05")
