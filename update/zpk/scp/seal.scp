@@ -909,7 +909,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 				pCamera:SetCameraRotate(280, 0.1)
 			elseif object:IsTargetLocalPlayer() == true then
 				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
-				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
+				pCamera:SetDestOffsetPos(vector3(0, 100, -300))
 				pCamera:SetCameraRotate(100, 0.1)
 			end
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
@@ -932,7 +932,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(250, 0.03)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 200, -800), 0.03)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
+			pCamera:SetDestOffsetPos(vector3(0, 100, -300))
 			pCamera:SetCameraRotate(70, 0.03)
 		end
 		object:ChangeAnim("atk0_stay02")
@@ -950,7 +950,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(190, 0.03)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 150, -800), 0.03)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 100))
+			pCamera:SetDestOffsetPos(vector3(0, 100, -400))
 			pCamera:SetCameraRotate(10, 0.03)
 		end
 		object:ChangeAnim("atk0_stay03")
@@ -968,7 +968,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(250, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 50, -600), 0.1)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
+			pCamera:SetDestOffsetPos(vector3(0, 100, -300))
 			pCamera:SetCameraRotate(70, 0.1)
 		end
 		object:ChangeAnim("atk0_stay04")
@@ -1182,6 +1182,304 @@ _GrazeDainsleifRSpecialAttak = __sealFn({
 				if object:IsLocalPlayer() == true then
 					pGrazeDainsleifSpecialEffect:ForcedEnd()
 				end
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(true)
+			end
+			object:SetTargetDamageEffect("")
+			object:SetCustomState(0)
+			object:StopSwordLight()
+			return false
+		end
+		return true
+	end,
+})
+
+function TBGMRangedAttack(object)
+	local r = ray3(object:GetCameraOrientation():GetPos(), object:GetCameraOrientation():GetDirection())
+	local r2 = ray3(r.pos, r.dir)
+	local right = object:GetCameraOrientation():GetRight()
+	local temp = vector3(0, 0, 0)
+	local up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * 0.05
+	up.y = up.y * 0.05
+	up.z = up.z * 0.05
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * -0.05
+	up.y = up.y * -0.05
+	up.z = up.z * -0.05
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * 0.05
+	right.y = right.y * 0.05
+	right.z = right.z * 0.05
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * -0.05
+	right.y = right.y * -0.05
+	right.z = right.z * -0.05
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * 0.08
+	up.y = up.y * 0.08
+	up.z = up.z * 0.08
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * -0.02
+	right.y = right.y * -0.02
+	right.z = right.z * -0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * 0.04
+	up.y = up.y * 0.04
+	up.z = up.z * 0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * -0.04
+	right.y = right.y * -0.04
+	right.z = right.z * -0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * 0.04
+	up.y = up.y * 0.04
+	up.z = up.z * 0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * 0.02
+	right.y = right.y * 0.02
+	right.z = right.z * 0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * 0.02
+	up.y = up.y * 0.02
+	up.z = up.z * 0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * 0.04
+	right.y = right.y * 0.04
+	right.z = right.z * 0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * -0.04
+	up.y = up.y * -0.04
+	up.z = up.z * -0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * -0.02
+	right.y = right.y * -0.02
+	right.z = right.z * -0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * -0.02
+	up.y = up.y * -0.02
+	up.z = up.z * -0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * -0.04
+	right.y = right.y * -0.04
+	right.z = right.z * -0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * -0.04
+	up.y = up.y * -0.04
+	up.z = up.z * -0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * 0.02
+	right.y = right.y * 0.02
+	right.z = right.z * 0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	r2 = ray3(r.pos, r.dir)
+	temp = vector3(0, 0, 0)
+	right = object:GetCameraOrientation():GetRight()
+	up = vec3_cross(temp, r2.dir, right)
+	up.x = up.x * -0.02
+	up.y = up.y * -0.02
+	up.z = up.z * -0.02
+	r2.dir = vec3_add(r2.dir, r2.dir, up)
+	right = object:GetCameraOrientation():GetRight()
+	right.x = right.x * 0.04
+	right.y = right.y * 0.04
+	right.z = right.z * 0.04
+	r2.dir = vec3_add(r2.dir, r2.dir, right)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	object:RangedMultiAttackProc(r2, "b1")
+	return 1
+end
+
+_TBGMSpecialAttak = __sealFn({
+	[0]= function (object)
+		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+			if object:GetCustomState() == 0 then
+
+				local pCamera = GetCamera()
+				if object:IsLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(300, 300, -250), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 40, 40))
+					pCamera:SetCameraRotate(180, 1)
+				elseif object:IsTargetLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(300, 300, -250), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 40, 40))
+					pCamera:SetCameraRotate(0, 1)
+				end
+
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(false)
+				object:AttachSpecialNode("T_node_01")
+				object:SetCustomState(1)
+				object:SetCheckTimer(2)
+			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+				vecPos = object:GetPos()
+				pGrazeDainsleifSpecialEffect = CreateEffectObject()
+				pGrazeDainsleifSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(1.5, 1.5, 1.5))
+				AddGlobalObject(pGrazeDainsleifSpecialEffect)
+				object:SetCustomState(2)
+			end
+		elseif object:GetCustomState() == 0 then
+			object:SetCustomState(3)
+			object:SetCheckTimer(2)
+		end
+
+		if object:GetCustomState() == 3 and object:GetCheckTimer() == true then
+			object:SetCustomState(2)
+		end
+		if object:GetCustomState() == 2 then
+			local pCamera = GetCamera()
+			if object:IsLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
+				pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+				pCamera:SetCameraRotate(280, 0.1)
+			elseif object:IsTargetLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
+				pCamera:SetDestOffsetPos(vector3(0, 100, -300))
+				pCamera:SetCameraRotate(100, 0.1)
+			end
+			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
+			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
+			object:ChangeAnim("atk0_stay01")
+			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+			object:StopSwordLight()
+			object:AddCurCombo()
+			object:SetCustomState(0)
+		end
+		return true
+	end,
+
+	[1]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 200, -800), 0.03)
+			pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+			pCamera:SetCameraRotate(250, 0.03)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 200, -800), 0.03)
+			pCamera:SetDestOffsetPos(vector3(0, 100, -300))
+			pCamera:SetCameraRotate(70, 0.03)
+		end
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
+		object:ChangeAnim("atk0_stay02")
+		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
+		object:PlaySwordLight()
+		object:AddCurCombo()
+		return true
+	end,
+
+	[2]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -800), 0.03)
+			pCamera:SetDestOffsetPos(vector3(0, 100, 400))
+			pCamera:SetCameraRotate(190, 0.03)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -800), 0.03)
+			pCamera:SetDestOffsetPos(vector3(0, 100, -400))
+			pCamera:SetCameraRotate(10, 0.03)
+		end
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+		object:ChangeAnim("atk0_stay03")
+		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
+		object:SetTargetDamageEffSize(vector3(3, 3, 3))
+		object:AddCurCombo()
+		return true
+	end,
+
+	[3]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 50, -600), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+			pCamera:SetCameraRotate(250, 0.1)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 50, -600), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 100, -300))
+			pCamera:SetCameraRotate(70, 0.1)
+		end
+		object:ChangeAnim("atk0_stay04")
+		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
+		object:SetTargetDamageEffSize(vector3(3, 3, 3))
+		object:AddCurCombo()
+		return true
+	end,
+
+	["__def"] = function (object)
+		if object:GetCustomState() == 0 then
+			object:SetCheckTimer(1)
+			object:SetCustomState(1)
+			return true
+		elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
+			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+				local pCamera = GetCamera()
+				pCamera:SetCameraNormal(45)
+				pGrazeDainsleifSpecialEffect:ForcedEnd()
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(true)
 			end
