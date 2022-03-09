@@ -1,3 +1,5 @@
+-- Copyright 2019-2022 Sauce Burn Seal, All Rights Reserved
+
 local function __sealFn(tab)
 	local _act = tab
 	return function (object)
@@ -14,6 +16,38 @@ local function __sealFn(tab)
 		end
 		return true
 	end
+end
+
+math.randomseed(os.time())
+local __pi2 = 2.0 * math.pi
+local function randn_bm(c) 
+	local u = math.random()
+	while u == 0 do
+		u = math.random()
+	end
+	local v = 0
+	while v == 0 do
+		v = math.random()
+	end
+
+	local num = math.sqrt( -2.0 * math.log( u ) ) * math.cos( __pi2 * v )
+	num = num / 4.0 + c -- Translate to 0 -> 1
+
+	-- return math.max(math.min(num, 1), 0); // cap between 0 and 1
+	if num > 1 or num < 0 then
+		return randn_bm(c)
+	end
+	return num
+end
+
+local function __raydir(obj, r, up, a, right, b, t)
+	local r2 = ray3(r.pos, r.dir)
+	local u = vector3(up.x * a, up.y * a, up.z * a)
+	r2.dir = vec3_add(r2.dir, r2.dir, u)
+	u = vector3(right.x * b, right.y * b, right.z * b)
+	r2.dir = vec3_add(r2.dir, r2.dir, u)
+	r2.dir = vec3_normalize(r2.dir, r2.dir)
+	obj:RangedMultiAttackProc(r2, t)
 end
 
 
@@ -1196,161 +1230,28 @@ _GrazeDainsleifRSpecialAttak = __sealFn({
 
 function TBGMRangedAttack(object)
 	local r = ray3(object:GetCameraOrientation():GetPos(), object:GetCameraOrientation():GetDirection())
-	local r2 = ray3(r.pos, r.dir)
 	local right = object:GetCameraOrientation():GetRight()
-	local temp = vector3(0, 0, 0)
-	local up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * 0.05
-	up.y = up.y * 0.05
-	up.z = up.z * 0.05
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * -0.05
-	up.y = up.y * -0.05
-	up.z = up.z * -0.05
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * 0.05
-	right.y = right.y * 0.05
-	right.z = right.z * 0.05
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * -0.05
-	right.y = right.y * -0.05
-	right.z = right.z * -0.05
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * 0.08
-	up.y = up.y * 0.08
-	up.z = up.z * 0.08
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * -0.02
-	right.y = right.y * -0.02
-	right.z = right.z * -0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * 0.04
-	up.y = up.y * 0.04
-	up.z = up.z * 0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * -0.04
-	right.y = right.y * -0.04
-	right.z = right.z * -0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * 0.04
-	up.y = up.y * 0.04
-	up.z = up.z * 0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * 0.02
-	right.y = right.y * 0.02
-	right.z = right.z * 0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * 0.02
-	up.y = up.y * 0.02
-	up.z = up.z * 0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * 0.04
-	right.y = right.y * 0.04
-	right.z = right.z * 0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * -0.04
-	up.y = up.y * -0.04
-	up.z = up.z * -0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * -0.02
-	right.y = right.y * -0.02
-	right.z = right.z * -0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * -0.02
-	up.y = up.y * -0.02
-	up.z = up.z * -0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * -0.04
-	right.y = right.y * -0.04
-	right.z = right.z * -0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * -0.04
-	up.y = up.y * -0.04
-	up.z = up.z * -0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * 0.02
-	right.y = right.y * 0.02
-	right.z = right.z * 0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
-	r2 = ray3(r.pos, r.dir)
-	temp = vector3(0, 0, 0)
-	right = object:GetCameraOrientation():GetRight()
-	up = vec3_cross(temp, r2.dir, right)
-	up.x = up.x * -0.02
-	up.y = up.y * -0.02
-	up.z = up.z * -0.02
-	r2.dir = vec3_add(r2.dir, r2.dir, up)
-	right = object:GetCameraOrientation():GetRight()
-	right.x = right.x * 0.04
-	right.y = right.y * 0.04
-	right.z = right.z * 0.04
-	r2.dir = vec3_add(r2.dir, r2.dir, right)
-	r2.dir = vec3_normalize(r2.dir, r2.dir)
-	object:RangedMultiAttackProc(r2, "b1")
+	local up = vec3_cross(vector3(0, 0, 0), r.dir, right)
+	local v = randn_bm(0.5) * 2.5 + 2.5
+	local x = randn_bm(0) * 0.2
+	local y = randn_bm(0) * 0.2
+
+	__raydir(object, r, up, 0.075, right, 0, "b1")
+	__raydir(object, r, up, -0.075, right, 0, "b1")
+	__raydir(object, r, up, 0, right, 0.075, "b1")
+	__raydir(object, r, up, 0, right, -0.075, "b1")
+
+	__raydir(object, r, up, 0.04 * v + y, right, -0.02 * v + x, "b1")
+	__raydir(object, r, up, 0.02 * v + y, right, -0.04 * v + x, "b1")
+
+	__raydir(object, r, up, 0.04 * v + y, right, 0.02 * v + x, "b1")
+	__raydir(object, r, up, 0.02 * v + y, right, 0.04 * v + x, "b1")
+
+	__raydir(object, r, up, -0.04 * v + y, right, -0.02 * v + x, "b1")
+	__raydir(object, r, up, -0.02 * v + y, right, -0.04 * v + x, "b1")
+
+	__raydir(object, r, up, -0.04 * v + y, right, 0.02 * v + x, "b1")
+	__raydir(object, r, up, -0.02 * v + y, right, 0.04 * v + x, "b1")
 	return 1
 end
 
