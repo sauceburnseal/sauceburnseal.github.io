@@ -20,7 +20,7 @@ end
 
 math.randomseed(os.time())
 local __pi2 = 2.0 * math.pi
-local function randn_bm(c) 
+local function randn_bm(c, n) 
 	local u = math.random()
 	while u == 0 do
 		u = math.random()
@@ -30,8 +30,9 @@ local function randn_bm(c)
 		v = math.random()
 	end
 
+	n = n or 4.0
 	local num = math.sqrt( -2.0 * math.log( u ) ) * math.cos( __pi2 * v )
-	num = num / 4.0 + c -- Translate to 0 -> 1
+	num = num / n + c -- Translate to 0 -> 1
 
 	-- return math.max(math.min(num, 1), 0); // cap between 0 and 1
 	if num > 1 or num < 0 then
@@ -1395,3 +1396,13 @@ _TBGMSpecialAttak = __sealFn({
 		return true
 	end,
 })
+
+function __BarbatosLupusRex(object)
+	local r = ray3(object:GetCameraOrientation():GetPos(), object:GetCameraOrientation():GetDirection())
+	local right = object:GetCameraOrientation():GetRight()
+	local up = vec3_cross(vector3(0, 0, 0), r.dir, right)
+	local x = randn_bm(0, 6.0) * 0.075
+	local y = randn_bm(0, 6.0) * 0.075
+	__raydir(object, r, up, y, right, x, "hand_E_L")
+	return 1
+end
