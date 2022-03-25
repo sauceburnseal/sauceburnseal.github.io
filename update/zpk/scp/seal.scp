@@ -1406,3 +1406,85 @@ function __BarbatosLupusRex(object)
 	__raydir(object, r, up, y, right, x, "hand_E_L")
 	return 1
 end
+
+__BarbatosLupusRexSpecialAttak = __sealFn({
+	[0]= function (object)
+		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+			if object:GetCustomState() == 0 then
+
+				local pCamera = GetCamera()
+				if object:IsLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(300, 300, -250), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 40, 40))
+					pCamera:SetCameraRotate(180, 1)
+				elseif object:IsTargetLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(300, 300, -250), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 40, 40))
+					pCamera:SetCameraRotate(0, 1)
+				end
+
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(false)
+				object:AttachSpecialNode("T_node_01")
+				object:SetCustomState(1)
+				object:SetCheckTimer(2)
+			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+				vecPos = object:GetPos()
+				pGrazeDainsleifSpecialEffect = CreateEffectObject()
+				pGrazeDainsleifSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(1.5, 1.5, 1.5))
+				AddGlobalObject(pGrazeDainsleifSpecialEffect)
+				object:SetCustomState(2)
+			end
+		elseif object:GetCustomState() == 0 then
+			object:SetCustomState(3)
+			object:SetCheckTimer(2)
+		end
+
+		if object:GetCustomState() == 3 and object:GetCheckTimer() == true then
+			object:SetCustomState(2)
+		end
+		if object:GetCustomState() == 2 then
+			local pCamera = GetCamera()
+			if object:IsLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
+				pCamera:SetDestOffsetPos(vector3(0, 100, 300))
+				pCamera:SetCameraRotate(280, 0.1)
+			elseif object:IsTargetLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 300, -600), 0.1)
+				pCamera:SetDestOffsetPos(vector3(0, 100, -300))
+				pCamera:SetCameraRotate(100, 0.1)
+			end
+			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
+			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
+			object:ChangeAnim("atk0_stay01")
+			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+			object:StopSwordLight()
+			object:AddCurCombo()
+			object:SetCustomState(0)
+		end
+		return true
+	end,
+
+	["__def"] = function (object)
+		if object:GetCustomState() == 0 then
+			object:SetCheckTimer(1)
+			object:SetCustomState(1)
+			return true
+		elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
+			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+				local pCamera = GetCamera()
+				pCamera:SetCameraNormal(45)
+				pGrazeDainsleifSpecialEffect:ForcedEnd()
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(true)
+			end
+			object:SetTargetDamageEffect("")
+			object:SetCustomState(0)
+			object:StopSwordLight()
+			return false
+		end
+		return true
+	end,
+})
