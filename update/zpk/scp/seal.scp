@@ -1454,6 +1454,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, -400))
 				pCamera:SetCameraRotate(30, 0.1)
 			end
+			object:SetEnableTargetDamageEffect(false)
 			object:SetTargetDamageEffect("fxrs\\0165.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -1511,6 +1512,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 			pCamera:SetCameraRotate(10, 0.2)
 		end
+		object:SetEnableTargetDamageEffect(true)
 		object:ChangeAnim("atk0_stay04")
 		object:AddCurCombo()
 		return true
@@ -1527,6 +1529,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 300, 0))
 			pCamera:SetCameraRotate(10, 0.2)
 		end
+		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay05")
 		-- object:PlaySwordLight()
 		object:AddCurCombo()
@@ -1536,13 +1539,13 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 	[5]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 50, -1000), 0.04)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
-			pCamera:SetCameraRotate(360, 0.04)
+			pCamera:SetCameraPosEx(vector3(0, 100, -1000), 0.06)
+			pCamera:SetDestOffsetPos(vector3(0, 0, 0))
+			pCamera:SetCameraRotate(360, 0.06)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 50, -1000), 0.04)
-			pCamera:SetDestOffsetPos(vector3(0, 100, 0))
-			pCamera:SetCameraRotate(180, 0.04)
+			pCamera:SetCameraPosEx(vector3(0, 100, -1000), 0.06)
+			pCamera:SetDestOffsetPos(vector3(0, 0, 0))
+			pCamera:SetCameraRotate(180, 0.06)
 		end
 		object:ChangeAnim("atk0_stay06")
 		-- object:PlaySwordLight()
@@ -1567,6 +1570,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(true)
 			end
+			object:SetEnableTargetDamageEffect(true)
 			object:SetTargetDamageEffect("")
 			object:SetCustomState(0)
 			object:StopSwordLight()
