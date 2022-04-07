@@ -70,7 +70,6 @@ _NoNameAstrayGundamSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -99,6 +98,7 @@ _NoNameAstrayGundamSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 				pCamera:SetCameraRotate(-30, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			object:SetEnableTargetDamageEffect(false)
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			-- object:SetTargetDamageEffect("fxrs\\0165.zfx")
@@ -210,6 +210,7 @@ _NoNameAstrayGundamSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(200)
 			object:SetCustomState(1)
 			return true
@@ -248,7 +249,6 @@ _GrazeSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -277,6 +277,7 @@ _GrazeSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 				pCamera:SetCameraRotate(100, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -385,6 +386,7 @@ _GrazeSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
@@ -413,7 +415,6 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 
 				local pCamera = GetCamera()
 				if object:IsLocalPlayer() == true then
-					object:AttachSpecialNode("T_node_01")
 					pCamera:SetCameraPosEx(vector3(-300, 300, 400), 1)
 					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
 					pCamera:SetCameraRotate(-20, 0.5)
@@ -443,6 +444,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 			object:SetCustomState(2)
 		end
 		if object:GetCustomState() == 2 then
+			object:AttachSpecialNode("T_node_01")
 			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
 			object:SetTargetDamageEffect("fxrs\\0119.zfx")
 			object:SetTargetDamageEffSize(vector3(1, 1, 1))
@@ -552,6 +554,7 @@ _TenshihoSimaYiSazabiSpecialAttack = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(250)
 			object:SetCustomState(1)
 			return true
@@ -579,7 +582,6 @@ _RTenshihoSimaYiSazabiSpecialAttack = __sealFn({
 
 				local pCamera = GetCamera()
 				if object:IsLocalPlayer() == true then
-					object:AttachSpecialNode("T_node_01")
 					pCamera:SetCameraPosEx(vector3(400, 150, 300), 1)
 					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
 					pCamera:SetCameraRotate(-20, 0.5)
@@ -609,6 +611,7 @@ _RTenshihoSimaYiSazabiSpecialAttack = __sealFn({
 			object:SetCustomState(2)
 		end
 		if object:GetCustomState() == 2 then
+			object:AttachSpecialNode("T_node_01")
 			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
 			object:SetTargetDamageEffect("fxrs\\0119.zfx")
 			object:SetTargetDamageEffSize(vector3(1, 1, 1))
@@ -702,6 +705,7 @@ _RTenshihoSimaYiSazabiSpecialAttack = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(250)
 			object:SetCustomState(1)
 			return true
@@ -740,7 +744,6 @@ _HashmalSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -769,6 +772,7 @@ _HashmalSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 				pCamera:SetCameraRotate(40, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -879,6 +883,7 @@ _HashmalSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
@@ -918,7 +923,6 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -947,6 +951,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, -300))
 				pCamera:SetCameraRotate(100, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -1034,6 +1039,7 @@ _GrazeDainsleifSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
@@ -1084,7 +1090,6 @@ _GrazeDainsleifRSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -1115,6 +1120,7 @@ _GrazeDainsleifRSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, 0))
 				pCamera:SetCameraRotate(100, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			-- object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -1206,6 +1212,7 @@ _GrazeDainsleifRSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
@@ -1277,7 +1284,6 @@ _TBGMSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -1306,6 +1312,7 @@ _TBGMSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 40, 0))
 				pCamera:SetCameraRotate(90, 1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
@@ -1376,6 +1383,7 @@ _TBGMSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
@@ -1425,7 +1433,6 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
-				object:AttachSpecialNode("T_node_01")
 				object:SetCustomState(1)
 				object:SetCheckTimer(2)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
@@ -1454,6 +1461,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 				pCamera:SetDestOffsetPos(vector3(0, 100, -400))
 				pCamera:SetCameraRotate(30, 0.1)
 			end
+			object:AttachSpecialNode("T_node_01")
 			object:SetEnableTargetDamageEffect(false)
 			object:SetTargetDamageEffect("fxrs\\0165.zfx")
 			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
@@ -1558,6 +1566,7 @@ __BarbatosLupusRexSpecialAttak = __sealFn({
 
 	["__def"] = function (object)
 		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
 			object:SetCheckTimer(1)
 			object:SetCustomState(1)
 			return true
