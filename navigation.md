@@ -29,12 +29,12 @@
 <!-- counter pixel for counting visitors -->
 <!-- <img src="http://stats.markdown.io/mdwiki_info.gif" style="display:none;"/> -->
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-45527891-2"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DHQ9JKVF5Y"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-45527891-2');
+  gtag('config', 'G-DHQ9JKVF5Y');
 </script>
 
