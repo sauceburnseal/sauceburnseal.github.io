@@ -16,6 +16,8 @@
 
 [贊助 (Donate)](donate.md)
 
+[海豹圖鑑 (Pokedex)](pokedex/)
+
 [YTB工具](dddd/)
 
 [DDoS紀念館](gotddos/gotddos.md)
