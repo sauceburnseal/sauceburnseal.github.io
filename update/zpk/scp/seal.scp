@@ -2170,3 +2170,155 @@ __ELSSpecialAttak = __sealFn({
 	end,
 })
 
+function __RX79FASWMissile(object)
+	local n = object:GetCurCombo()
+	local r = object:GetRangedAttackRay()
+	-- local camori = GetCamera():GetOrientation()
+	-- ori:Right(0)
+	-- local r = ray3(camori:GetPos(), camori:GetDirection())
+	if n == 0 then
+		object:MissileAttackProc(r, "ml_e1")
+	elseif n == 1 then
+		object:MissileAttackProc(r, "ml_e2")
+	elseif n == 2 then
+		object:MissileAttackProc(r, "ml_e3")
+	elseif n == 3 then
+		object:MissileAttackProc(r, "ml_e4")
+	end
+	object:AddCurCombo()
+	return 1
+end
+
+_RX79FASWSpecialAttack = __sealFn({
+	[0]= function (object)
+		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+			if object:GetCustomState() == 0 then
+
+				local pCamera = GetCamera()
+				if object:IsLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(-300, 300, 400), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
+					pCamera:SetCameraRotate(-20, 0.5)
+				elseif object:IsTargetLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(-300, 300, 400), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 0, 0))
+					pCamera:SetCameraRotate(-20, 0.5)
+				end
+
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(false)
+				object:SetCustomState(1)
+				object:SetCheckTimer(500)
+			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+				vecPos = object:GetPos()
+				pRX79FASWSpecialEffect = CreateEffectObject()
+				pRX79FASWSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(0.85, 0.85, 0.85))
+				AddGlobalObject(pRX79FASWSpecialEffect)
+				object:SetCustomState(2)
+			end
+		elseif object:GetCustomState() == 0 then
+			object:SetCustomState(3)
+			object:SetCheckTimer(500)
+		end
+
+		if object:GetCustomState() == 3 and object:GetCheckTimer() == true then
+			object:SetCustomState(2)
+		end
+		if object:GetCustomState() == 2 then
+			local pCamera = GetCamera()
+			if object:IsLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 150, -500), 0.07)
+				pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+				pCamera:SetCameraRotate(150, 0.07)
+			elseif object:IsTargetLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 150, -500), 0.07)
+				pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+				pCamera:SetCameraRotate(-30, 0.07)
+			end
+			object:AttachSpecialNode("T_node_01")
+			--object:SetEnableTargetDamageEffect(false)
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+			object:SetTargetDamageEffect("fxrs\\0119.zfx")
+			object:SetTargetDamageEffSize(vector3(1, 1, 1))
+			object:ChangeAnim("atk0_stay01")
+			object:PlaySwordLight()
+			object:AddCurCombo()
+			object:SetCustomState(0)
+		end
+		return true
+	end,
+
+	[1]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -600), 0.01)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(90, 0.01)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -600), 0.01)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(-90, 0.01)
+		end
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+		object:ChangeAnim("atk0_stay02")
+		object:AddCurCombo()
+		return true
+	end,
+
+	[2]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 140, -500), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(250, 0.1)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 140, -500), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(70, 0.1)
+		end
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+		object:ChangeAnim("atk0_stay03")
+		object:AddCurCombo()
+		return true
+	end,
+
+	[3]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -300), 0.06)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(140, 0.06)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 150, -300), 0.06)
+			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+			pCamera:SetCameraRotate(-40, 0.06)
+		end
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+		object:ChangeAnim("atk0_stay04")
+		object:AddCurCombo()
+		return true
+	end,
+
+	["__def"] = function (object)
+		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
+			object:SetCheckTimer(250)
+			object:SetCustomState(1)
+			return true
+		elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
+			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+				local pCamera = GetCamera()
+				pCamera:SetCameraNormal(45)
+				pRX79FASWSpecialEffect:ForcedEnd()
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(true)
+			end
+			object:SetTargetDamageEffect("")
+			object:SetCustomState(0)
+			object:StopSwordLight()
+			return false
+		end
+		return true
+	end,
+})
