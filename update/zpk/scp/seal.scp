@@ -2326,7 +2326,7 @@ _RX79FASWSpecialAttack = __sealFn({
 
 function RegnantMissileInit(missile)
 	missile:SetSubWeaponID(49219)
-	missile:SetMaxLength(800)
+	missile:SetMaxLength(900)
 	missile:SetSubWeaponNum(2)
 	missile:SetHomingMode(false)
 	missile:SetMultLockOnFlag(false)
