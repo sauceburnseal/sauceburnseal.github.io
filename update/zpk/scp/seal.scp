@@ -3409,8 +3409,8 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 					pCamera:SetDestOffsetPos(vector3(-60, 100, 35))
 					pCamera:SetCameraRotate(0, 1)
 				elseif object:IsTargetLocalPlayer() == true then
-					pCamera:SetCameraPosEx(vector3(300, 60, 300), 1)
-					pCamera:SetDestOffsetPos(vector3(-60, 100, 35))
+					pCamera:SetCameraPosEx(vector3(-300, 60, -300), 1)
+					pCamera:SetDestOffsetPos(vector3(60, 100, -35))
 					pCamera:SetCameraRotate(0, 1)
 				end
 
@@ -3451,8 +3451,8 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(-30, 300, -300))
 			pCamera:SetCameraRotate(0, 0.02)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(250, 100, 100), 0.02)
-			pCamera:SetDestOffsetPos(vector3(-30, 300, -300))
+			pCamera:SetCameraPosEx(vector3(-250, 100, -100), 0.02)
+			pCamera:SetDestOffsetPos(vector3(30, 300, 300))
 			pCamera:SetCameraRotate(0, 0.02)
 		end
 		object:SetEnableTargetDamageEffect(false)
@@ -3464,12 +3464,12 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 	[2]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(200, 180, -60), 0.2)
-			pCamera:SetDestOffsetPos(vector3(0, 300, -330))
+			pCamera:SetCameraPosEx(vector3(270, 240, 80), 0.2)
+			pCamera:SetDestOffsetPos(vector3(0, 240, -300))
 			pCamera:SetCameraRotate(0, 0.2)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(200, 180, -60), 0.2)
-			pCamera:SetDestOffsetPos(vector3(0, 300, -330))
+			pCamera:SetCameraPosEx(vector3(-270, 240, -80), 0.2)
+			pCamera:SetDestOffsetPos(vector3(0, 240, 300))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
 		object:SetEnableTargetDamageEffect(false)
@@ -3481,12 +3481,12 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 	[3]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(-200, 240, -60), 0.2)
+			pCamera:SetCameraPosEx(vector3(-270, 240, 80), 0.2)
 			pCamera:SetDestOffsetPos(vector3(0, 240, -300))
 			pCamera:SetCameraRotate(0, 0.2)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(-200, 240, -60), 0.2)
-			pCamera:SetDestOffsetPos(vector3(0, 240, -300))
+			pCamera:SetCameraPosEx(vector3(270, 240, -80), 0.2)
+			pCamera:SetDestOffsetPos(vector3(0, 240, 300))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
 		object:SetEnableTargetDamageEffect(false)
@@ -3502,8 +3502,8 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 300, -300))
 			pCamera:SetCameraRotate(0, 0.2)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 360, 250), 0.2)
-			pCamera:SetDestOffsetPos(vector3(0, 300, -300))
+			pCamera:SetCameraPosEx(vector3(0, 360, -250), 0.2)
+			pCamera:SetDestOffsetPos(vector3(0, 300, 300))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
 		object:SetEnableTargetDamageEffect(false)
@@ -3519,8 +3519,8 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 90))
 			pCamera:SetCameraRotate(0, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(150, 150, -150), 0.1)
-			pCamera:SetDestOffsetPos(vector3(0, 50, 90))
+			pCamera:SetCameraPosEx(vector3(-150, 150, 150), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 50, -90))
 			pCamera:SetCameraRotate(0, 0.1)
 		end
 		object:SetEnableTargetDamageEffect(false)
@@ -3536,8 +3536,8 @@ _SHOURETSUTEIRYUBIGUNDAMSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 90))
 			pCamera:SetCameraRotate(0, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 220, -220), 0.1)
-			pCamera:SetDestOffsetPos(vector3(0, 50, 90))
+			pCamera:SetCameraPosEx(vector3(0, 220, 220), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 50, -90))
 			pCamera:SetCameraRotate(0, 0.1)
 		end
 		object:SetEnableTargetDamageEffect(false)
