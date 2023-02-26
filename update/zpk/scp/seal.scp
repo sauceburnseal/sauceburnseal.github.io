@@ -3930,3 +3930,183 @@ __KIBUTEISOUSOUGUNDAMSpecialAttack = __sealFn({
 		return true
 	end,
 })
+
+_AmaterasuSpecialAttack = __sealFn({
+	[0]= function (object)
+		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+			if object:GetCustomState() == 0 then
+
+				local pCamera = GetCamera()
+				if object:IsLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(0, 100, -350), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 0, 40))
+					pCamera:SetCameraRotate(150, 1)
+				elseif object:IsTargetLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(0, 100, -350), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 0, -40))
+					pCamera:SetCameraRotate(-30, 1)
+				end
+
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(false)
+				object:SetCustomState(1)
+				object:SetCheckTimer(2)
+			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+				local vecPos = object:GetPos()
+				pAmaterasuSpecialEffect = CreateEffectObject()
+				pAmaterasuSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(1.5, 1.5, 1.5))
+				AddGlobalObject(pAmaterasuSpecialEffect)
+				object:SetCustomState(2)
+			end
+		elseif object:GetCustomState() == 0 then
+			object:SetCustomState(3)
+			object:SetCheckTimer(2)
+		end
+
+		if object:GetCustomState() == 3 and object:GetCheckTimer() == true then
+			object:SetCustomState(2)
+		end
+		if object:GetCustomState() == 2 then
+			local pCamera = GetCamera()
+			if object:IsLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 100, -1350), 0.05)
+				pCamera:SetDestOffsetPos(vector3(0, 100, -200))
+				pCamera:SetCameraRotate(140, 0.05)
+			elseif object:IsTargetLocalPlayer() == true then
+				pCamera:SetCameraPosEx(vector3(0, 100, -1350), 0.05)
+				pCamera:SetDestOffsetPos(vector3(0, 100, 200))
+				pCamera:SetCameraRotate(-40, 0.05)
+			end
+
+			object:AttachSpecialNode("T_node_01")
+			object:SetTargetDamageEffect("fxrs\\0165.zfx")
+			object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
+			object:SetEnableTargetDamageEffect(false)
+			object:ChangeAnim("atk0_stay01")
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+			object:PlaySwordLight()
+			object:AddCurCombo()
+			object:SetCustomState(0)
+		end
+		return true
+	end,
+
+	[1]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 300, -100), 0.05)
+			pCamera:SetDestOffsetPos(vector3(0, 200, -200))
+			pCamera:SetCameraRotate(150, 0.05)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 300, -100), 0.05)
+			pCamera:SetDestOffsetPos(vector3(0, 200, 200))
+			pCamera:SetCameraRotate(-30, 0.05)
+		end
+		object:ChangeAnim("atk0_stay02")
+		object:AddCurCombo()
+		return true
+	end,
+
+	[2]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 200, -700), 0.02)
+			pCamera:SetDestOffsetPos(vector3(0, 230, 0))
+			pCamera:SetCameraRotate(140, 0.02)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 200, -700), 0.02)
+			pCamera:SetDestOffsetPos(vector3(0, 230, 0))
+			pCamera:SetCameraRotate(-40, 0.02)
+		end
+		object:ChangeAnim("atk0_stay03")
+		object:StopSwordLight()
+		object:SetTargetDamageEffect("fxrs\\0165.zfx")
+		object:SetTargetDamageEffSize(vector3(3, 3, 3))
+		object:AddCurCombo()
+		return true
+	end,
+
+	[3]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 0, -700), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 250, 0))
+			pCamera:SetCameraRotate(160, 0.1)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 0, -700), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 250, 0))
+			pCamera:SetCameraRotate(-20, 0.1)
+		end
+		object:ChangeAnim("atk0_stay04")
+		object:PlaySwordLight()
+		object:SetTargetDamageEffect("fxrs\\0165.zfx")
+		object:SetTargetDamageEffSize(vector3(3, 3, 3))
+		object:AddCurCombo()
+		return true
+	end,
+
+	[4]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 3000, -10), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 0, -120))
+			pCamera:SetCameraRotate(180, 0.1)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 3000, -10), 0.1)
+			pCamera:SetDestOffsetPos(vector3(0, 0, 120))
+			pCamera:SetCameraRotate(0, 0.1)
+		end
+
+
+		object:ChangeAnim("atk0_stay05")
+		object:StopSwordLight()
+		PlayEffectSound("0197.zsd")
+		object:SetTargetDamageEffect("fxrs\\0165.zfx")
+		object:SetTargetDamageEffSize(vector3(1, 1, 1))
+		object:AddCurCombo()
+		return true
+	end,
+
+	[5]= function (object)
+		local pCamera = GetCamera()
+		if object:IsLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 0, -550), 0.5)
+			pCamera:SetDestOffsetPos(vector3(0, 200, -100))
+			pCamera:SetCameraRotate(5, 0.5)
+		elseif object:IsTargetLocalPlayer() == true then
+			pCamera:SetCameraPosEx(vector3(0, 0, -550), 0.5)
+			pCamera:SetDestOffsetPos(vector3(0, 200, 100))
+			pCamera:SetCameraRotate(-175, 0.5)
+		end
+		object:ChangeAnim("atk0_stay06")
+		object:SetEnableTargetDamageEffect(true)
+		object:SetTargetDamageEffect("seal-res\\aa07.zfx")
+		object:SetTargetDamageEffSize(vector3(2.5, 2.5, 2.5))
+		object:AddCurCombo()
+		return true
+	end,
+
+	["__def"] = function (object)
+		if object:GetCustomState() == 0 then
+			object:DatachSpecialNode()
+			object:SetCheckTimer(1)
+			object:SetCustomState(1)
+			return true
+		elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
+			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
+				local pCamera = GetCamera()
+				pCamera:SetCameraNormal(45)
+				pAmaterasuSpecialEffect:ForcedEnd()
+				local pGameInterface = GetGameInterface()
+				pGameInterface:SetRenderAimPoint(true)
+			end
+			object:SetTargetDamageEffect("")
+			object:SetCustomState(0)
+			object:StopSwordLight()
+			object:SetEnableTargetDamageEffect(false)
+			return false
+		end
+		return true
+	end,
+})
