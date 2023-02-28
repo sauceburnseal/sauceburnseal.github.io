@@ -4060,7 +4060,9 @@ _AmaterasuSpecialAttack = __sealFn({
 
 		object:ChangeAnim("atk0_stay05")
 		object:StopSwordLight()
-		PlayEffectSound("0197.zsd")
+		pcall(function ()
+			PlayEffectSound("0197.zsd")
+		end)
 		object:SetTargetDamageEffect("fxrs\\0165.zfx")
 		object:SetTargetDamageEffSize(vector3(1, 1, 1))
 		object:AddCurCombo()
