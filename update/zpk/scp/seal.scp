@@ -4048,11 +4048,11 @@ _AmaterasuSpecialAttack = __sealFn({
 	[4]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 3000, -10), 0.1)
+			pCamera:SetCameraPosEx(vector3(0, 2000, -10), 0.1)
 			pCamera:SetDestOffsetPos(vector3(0, 0, -120))
 			pCamera:SetCameraRotate(180, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 3000, -10), 0.1)
+			pCamera:SetCameraPosEx(vector3(0, 2000, -10), 0.1)
 			pCamera:SetDestOffsetPos(vector3(0, 0, 120))
 			pCamera:SetCameraRotate(0, 0.1)
 		end
@@ -4060,9 +4060,6 @@ _AmaterasuSpecialAttack = __sealFn({
 
 		object:ChangeAnim("atk0_stay05")
 		object:StopSwordLight()
-		pcall(function ()
-			PlayEffectSound("0197.zsd")
-		end)
 		object:SetTargetDamageEffect("fxrs\\0165.zfx")
 		object:SetTargetDamageEffSize(vector3(1, 1, 1))
 		object:AddCurCombo()
