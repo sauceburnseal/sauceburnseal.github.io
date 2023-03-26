@@ -19,7 +19,7 @@
 
 1. 將原檔打包成`data.tar.gz`
 	* 原檔應如下方式放置:
-		* `txrx/`
+		* `txrs/`
 			* `aaaa.txr`
 			* `bbbb.txr`
 		* `sdrs/`
