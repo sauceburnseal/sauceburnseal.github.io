@@ -4272,10 +4272,12 @@ __DiceSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(20, 0.1)
 		end
 		object:ChangeAnim("atk0_stay05")
-		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
-		-- object:SetTargetDamageEffSize(vector3(3, 3, 3))
 		object:AddCurCombo()
-		-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+		-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
+		object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
+		-- object:ChangeWeaponNode("one_a")
+		-- object:SetTargetDamageEffect("fxrs\\0248.zfx")
+		-- object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 		return true
 	end,
 
