@@ -1,9 +1,3 @@
-<style>
-  .md-inpage-anchor{
-    display:inline
-  }
-</style>
-
 ### 開發中(INCOMING)
 ![dev](Marchosias.png)
 ------
