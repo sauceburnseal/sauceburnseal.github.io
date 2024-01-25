@@ -4560,8 +4560,8 @@ __AerialSpecialAttak = __sealFn({
 			-- object:SetTargetDamageEffect("fxrs\\0025.zfx")
 			-- object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
 			object:ChangeAnim("atk0_stay01")
-			object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
-			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
+			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
+			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
 			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
 			-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
 			object:SpecialScriptFuncStr("__PolyPodBallFUNC")
@@ -4584,7 +4584,6 @@ __AerialSpecialAttak = __sealFn({
 			pCamera:SetCameraRotate(30, 0.02)
 		end
 		object:ChangeAnim("atk0_stay02")
-		object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
 		object:SetTargetDamageEffect("fxrs\\0081.zfx")
 		-- object:PlaySwordLight()
 		object:AddCurCombo()
@@ -4606,7 +4605,6 @@ __AerialSpecialAttak = __sealFn({
 		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
 		-- object:SetTargetDamageEffSize(vector3(3, 3, 3))
 		object:AddCurCombo()
-		object:ChangeWeapon(UNIT_WEAPON_CHANGE_SECOND)
 		return true
 	end,
 
@@ -4625,7 +4623,6 @@ __AerialSpecialAttak = __sealFn({
 		-- object:SetTargetDamageEffect("fxrs\\0119.zfx")
 		-- object:SetTargetDamageEffSize(vector3(3, 3, 3))
 		object:AddCurCombo()
-		object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
 		return true
 	end,
 
@@ -4642,8 +4639,6 @@ __AerialSpecialAttak = __sealFn({
 		end
 		object:ChangeAnim("atk0_stay05")
 		object:AddCurCombo()
-		-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
-		object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
 		-- object:ChangeWeaponNode("one_a")
 		-- object:SetTargetDamageEffect("fxrs\\0248.zfx")
 		-- object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
@@ -4663,8 +4658,6 @@ __AerialSpecialAttak = __sealFn({
 		end
 		object:ChangeAnim("atk0_stay06")
 		object:AddCurCombo()
-		-- object:ChangeWeapon(UNIT_WEAPON_CHANGE_FIRST)
-		object:ChangeWeapon(UNIT_WEAPON_CHANGE_THIRD)
 		-- object:ChangeWeaponNode("one_a")
 		-- object:SetTargetDamageEffect("fxrs\\0248.zfx")
 		-- object:SetTargetDamageEffSize(vector3(0.8, 0.8, 0.8))
