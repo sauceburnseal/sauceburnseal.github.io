@@ -4707,10 +4707,23 @@ function __DarilbaldeRangedAttack(object)
 	return 1
 end
 function __DarilbaldeHomingInit(missile)
-	missile:SetAddAngle(8)
-	missile:SetMaxAngle(480)
-	missile:SetHomingStartAngle(20)
-	missile:SetMissileTailSize(15)
+	-- missile:SetAddAngle(12)
+	-- missile:SetMaxAngle(45)
+	-- missile:SetHomingStartAngle(60)
+	missile:SetAddAngle(1.2)
+	missile:SetMaxAngle(3)
+	missile:SetHomingStartAngle(10)
+	missile:SetMissAngle(165)
+	missile:SetMissileTailSize(7, 4294967295, 4294967295, 0.6)
+	missile:SetMissileTailTexture("txrs\\3090.txr")
+	return 1
+end
+function __DarilbaldeChainArmInit(missile)
+	missile:SetAddAngle(0.4)
+	missile:SetMaxAngle(2)
+	missile:SetHomingStartAngle(10)
+	missile:SetMissileTailSize(25, 4294967295, 4294967295, 0.6)
+	missile:SetMissileTailTexture("txrs\\3090.txr")
 	return 1
 end
 
@@ -4775,15 +4788,14 @@ __DarilbaldeSpecialAttack = __sealFn({
 	[1]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 100, -400), 0.2)
+			pCamera:SetCameraPosEx(vector3(0, 250, -400), 0.1)
 			pCamera:SetDestOffsetPos(vector3(0, 150, 0))
-			pCamera:SetCameraRotate(180, 0.2)
+			pCamera:SetCameraRotate(180, 0.1)
 		elseif object:IsTargetLocalPlayer() == true then
 			pCamera:SetCameraPosEx(vector3(0, 100, -400), 0.2)
 			pCamera:SetDestOffsetPos(vector3(0, 150, 0))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay02")
 		object:AddCurCombo()
 		return true
@@ -4800,7 +4812,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 500, 0))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay03")
 		object:AddCurCombo()
 		return true
@@ -4817,7 +4828,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, -100))
 			pCamera:SetCameraRotate(10, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay04")
 		object:AddCurCombo()
 		return true
@@ -4834,7 +4844,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, -300))
 			pCamera:SetCameraRotate(60, 0.1)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay05")
 		object:AddCurCombo()
 		return true
@@ -4851,7 +4860,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 250, 0))
 			pCamera:SetCameraRotate(90, 0.02)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay06")
 		object:AddCurCombo()
 		return true
@@ -4868,7 +4876,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, -500))
 			pCamera:SetCameraRotate(150, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay07")
 		object:AddCurCombo()
 		return true
@@ -4885,7 +4892,6 @@ __DarilbaldeSpecialAttack = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(20, 0.2)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay08")
 		object:AddCurCombo()
 		return true
@@ -4939,9 +4945,9 @@ __DarilbaldeSpecialAttackR = __sealFn({
 				object:SetCheckTimer(500)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
 				vecPos = object:GetPos()
-				pAerialDuelSpecialEffect = CreateEffectObject()
-				pAerialDuelSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(0.85, 0.85, 0.85))
-				AddGlobalObject(pAerialDuelSpecialEffect)
+				pDarilbaldelRSpecialEffect = CreateEffectObject()
+				pDarilbaldelRSpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(0.85, 0.85, 0.85))
+				AddGlobalObject(pDarilbaldelRSpecialEffect)
 				object:SetCustomState(2)
 			end
 		elseif object:GetCustomState() == 0 then
@@ -4986,7 +4992,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 150, 0))
 			pCamera:SetCameraRotate(120, 0.2)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay02")
 		object:AddCurCombo()
 		return true
@@ -5003,7 +5008,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(150, 0.2)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay03")
 		object:AddCurCombo()
 		return true
@@ -5020,7 +5024,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 150, -100))
 			pCamera:SetCameraRotate(90, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay04")
 		object:AddCurCombo()
 		return true
@@ -5037,7 +5040,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(150, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay05")
 		object:AddCurCombo()
 		return true
@@ -5054,7 +5056,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 550, 0))
 			pCamera:SetCameraRotate(160, 0.05)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay06")
 		object:AddCurCombo()
 		return true
@@ -5071,10 +5072,8 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 200))
 			pCamera:SetCameraRotate(0, 0.1)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay07")
 		object:AddCurCombo()
-		object:StopSwordLight()
 		return true
 	end,
 
@@ -5089,7 +5088,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(90, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay08")
 		object:AddCurCombo()
 		return true
@@ -5106,7 +5104,6 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			pCamera:SetDestOffsetPos(vector3(0, 50, 0))
 			pCamera:SetCameraRotate(160, 0.5)
 		end
-		object:SetEnableTargetDamageEffect(false)
 		object:ChangeAnim("atk0_stay09")
 		object:AddCurCombo()
 		object:PlaySwordLight()
@@ -5125,7 +5122,7 @@ __DarilbaldeSpecialAttackR = __sealFn({
 			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
 				local pCamera = GetCamera()
 				pCamera:SetCameraNormal(45)
-				pAerialDuelSpecialEffect:ForcedEnd()
+				pDarilbaldelRSpecialEffect:ForcedEnd()
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(true)
 			end
