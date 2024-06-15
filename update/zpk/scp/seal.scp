@@ -4804,11 +4804,11 @@ __DarilbaldeSpecialAttack = __sealFn({
 	[2]= function (object)
 		local pCamera = GetCamera()
 		if object:IsLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 50, -500), 0.2)
+			pCamera:SetCameraPosEx(vector3(0, 10, -600), 0.2)
 			pCamera:SetDestOffsetPos(vector3(0, 500, 0))
 			pCamera:SetCameraRotate(180, 0.2)
 		elseif object:IsTargetLocalPlayer() == true then
-			pCamera:SetCameraPosEx(vector3(0, 50, -500), 0.2)
+			pCamera:SetCameraPosEx(vector3(0, 10, -600), 0.2)
 			pCamera:SetDestOffsetPos(vector3(0, 500, 0))
 			pCamera:SetCameraRotate(0, 0.2)
 		end
