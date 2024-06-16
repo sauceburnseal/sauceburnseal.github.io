@@ -4714,7 +4714,7 @@ function __DarilbaldeHomingInit(missile)
 	missile:SetMaxAngle(5)
 	missile:SetHomingStartAngle(7.5)
 	missile:SetMissAngle(165)
-	missile:SetMissileTailSize(7, 4294967295, 4294967295, 0.6)
+	missile:SetMissileTailSize(7, 4294967295, 4294967295, 0.7)
 	missile:SetMissileTailTexture("txrs\\3090.txr")
 	return 1
 end
@@ -4722,7 +4722,7 @@ function __DarilbaldeChainArmInit(missile)
 	missile:SetAddAngle(0.4)
 	missile:SetMaxAngle(2)
 	missile:SetHomingStartAngle(10)
-	missile:SetMissileTailSize(25, 4294967295, 4294967295, 0.6)
+	missile:SetMissileTailSize(7, 4294967295, 4294967295, 0.7)
 	missile:SetMissileTailTexture("txrs\\3090.txr")
 	return 1
 end
