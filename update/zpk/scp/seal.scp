@@ -5164,19 +5164,17 @@ __MaySpecialAttak = __sealFn({
 				local pGameInterface = GetGameInterface()
 				pGameInterface:SetRenderAimPoint(false)
 				object:SetCustomState(1)
-				object:SetCheckTimer(2)
+				object:SetCheckTimer(500)
 			elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
-				if object:IsLocalPlayer() == true then
-					vecPos = object:GetPos()
-					pMaySpecialEffect = CreateEffectObject()
-					pMaySpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(1.5, 1.5, 1.5))
-					AddGlobalObject(pMaySpecialEffect)
-				end
+				vecPos = object:GetPos()
+				pMaySpecialEffect = CreateEffectObject()
+				pMaySpecialEffect:Init("fxrs\\0106.zfx", vecPos, object:GetRight(), object:GetUp(), vector3(1.5, 1.5, 1.5))
+				AddGlobalObject(pMaySpecialEffect)
 				object:SetCustomState(2)
 			end
 		elseif object:GetCustomState() == 0 then
 			object:SetCustomState(3)
-			object:SetCheckTimer(2)
+			object:SetCheckTimer(500)
 		end
 
 		if object:GetCustomState() == 3 and object:GetCheckTimer() == true then
