@@ -5136,9 +5136,18 @@ __DarilbaldeSpecialAttackR = __sealFn({
 	end,
 })
 
+
+function __MayHomingInit(missile)
+	missile:SetAddAngle(1.2)
+	missile:SetMaxAngle(3)
+	missile:SetMissileTailSize(10, 4294967295, 4294967295, 0.5)
+	missile:SetMissileTailTexture("txrs\\3966.txr")
+	return 1
+end
+
 __MaySpecialAttak = __sealFn({
 	[0]= function (object)
-		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayerRanged() == true then
+		if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
 			if object:GetCustomState() == 0 then
 
 				local pCamera = GetCamera()
@@ -5146,8 +5155,10 @@ __MaySpecialAttak = __sealFn({
 					pCamera:SetCameraPosEx(vector3(300, 300, -250), 1)
 					pCamera:SetDestOffsetPos(vector3(0, 40, 40))
 					pCamera:SetCameraRotate(180, 1)
-				elseif object:IsTargetLocalPlayerRanged() == true then
-					pCamera:SetAssailantLookAtRotate()
+				elseif object:IsTargetLocalPlayer() == true then
+					pCamera:SetCameraPosEx(vector3(0, 250, -300), 1)
+					pCamera:SetDestOffsetPos(vector3(0, 50, 0))
+					pCamera:SetCameraRotate(60, 1)
 				end
 
 				local pGameInterface = GetGameInterface()
@@ -5325,7 +5336,7 @@ __MaySpecialAttak = __sealFn({
 			return true
 		elseif object:GetCustomState() == 1 and object:GetCheckTimer() == true then
 			object:ChangeWeapon(UNIT_WEAPON_CHANGE_SPECIAL)
-			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayerRanged() == true then
+			if object:IsLocalPlayer() == true or object:IsTargetLocalPlayer() == true then
 				local pCamera = GetCamera()
 				pCamera:SetCameraNormal(45)
 				pMaySpecialEffect:ForcedEnd()
