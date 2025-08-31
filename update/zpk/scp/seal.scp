@@ -5140,7 +5140,7 @@ __DarilbaldeSpecialAttackR = __sealFn({
 function __MayHomingInit(missile)
 	missile:SetAddAngle(1.2)
 	missile:SetMaxAngle(3)
-	missile:SetMissileTailSize(10, 4294967295, 4294967295, 0.5)
+	missile:SetMissileTailSize(100, 4294967295, 4294967295, 0.95)
 	missile:SetMissileTailTexture("txrs\\3966.txr")
 	return 1
 end
